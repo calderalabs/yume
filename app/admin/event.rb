@@ -14,14 +14,14 @@ ActiveAdmin.register Event do
   filter :title
   filter :location
 
-  form do |f|
+  form(html: { multipart: true }) do |f|
     f.inputs do
       f.input :title
       f.input :description
       f.input :location
       f.input :starts_at
       f.input :ends_at
-      f.input :image
+      f.input :image, as: :file, hint: image_tag(f.object.image.url)
     end
     f.actions
   end
