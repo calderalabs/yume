@@ -1,6 +1,12 @@
 class Event < ApplicationRecord
   mount_uploader :image, ImageUploader
 
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :location, presence: true
+  validates :starts_at, presence: true
+  validates :ends_at, presence: true
+
   def as_json(_options = {})
     {
       id: id,

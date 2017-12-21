@@ -26,4 +26,15 @@ ActiveAdmin.register Event do
     f.actions
   end
 
+  show title: :title do
+    attributes_table do
+      row :description
+      row :location
+      row :starts_at
+      row :ends_at
+      row :image do |event|
+        image_tag event.image.url
+      end
+    end
+  end
 end
