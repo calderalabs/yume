@@ -17,7 +17,7 @@ module Yume
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
+        origins 'associazioneyume.com', 'www.associazioneyume.com'
         resource '*', headers: :any, methods: %i[get post options]
       end
     end
